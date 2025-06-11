@@ -7,6 +7,10 @@ public class Editor {
         return new EditorState(content);
     }
 
+    public void restore(EditorState state) {
+        content = state.getContent();
+    }
+
     public String getContent() {
         return content;
     }
