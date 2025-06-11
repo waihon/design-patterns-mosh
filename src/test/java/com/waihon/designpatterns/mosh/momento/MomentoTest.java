@@ -17,4 +17,12 @@ public class MomentoTest {
         EditorState editorState = new EditorState("a");
         assertThat(editorState.getContent()).isEqualTo("a");
     }
+
+    @Test
+    void editorCanCreateState() {
+        Editor editor = new Editor();
+        editor.setContent("a");
+        EditorState editorState = editor.createState();
+        assertThat(editorState.getContent()).isEqualTo("a");
+    }
 }
