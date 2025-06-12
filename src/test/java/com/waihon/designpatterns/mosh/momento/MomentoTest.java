@@ -45,4 +45,12 @@ public class MomentoTest {
         History history = new History();
         assertThat(history.getSize()).isEqualTo(0);
     }
+
+    @Test
+    void historyShouldIncreaseSizeWhenPushed() {
+        History history = new History();
+        history.push(new EditorState("content"));
+        assertThat(history.getSize()).isEqualTo(1);
+    }
+
 }
