@@ -65,4 +65,11 @@ public class MomentoTest {
         assertThat(history.getSize()).isEqualTo(1);
     }
 
+    @Test
+    void emptyHistoryShouldReturnNullWhenPopped() {
+        History history = new History();
+        EditorState lastState = history.pop();
+        assertThat(history.pop()).isEqualTo(null);
+    }
+
 }
