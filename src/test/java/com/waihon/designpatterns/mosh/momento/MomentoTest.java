@@ -39,4 +39,10 @@ public class MomentoTest {
         editor.restore(stateA);
         assertThat(editor.getContent()).isEqualTo("a");
     }
+
+    @Test
+    void historyHasSize() {
+        History history = new History();
+        assertThat(history.getSize()).isEqualTo(0);
+    }
 }
