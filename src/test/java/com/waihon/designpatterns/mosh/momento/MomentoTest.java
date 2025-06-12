@@ -53,4 +53,16 @@ public class MomentoTest {
         assertThat(history.getSize()).isEqualTo(1);
     }
 
+    @Test
+    void histroyShouldReturnLastEditorStateWhenPopped() {
+        History history = new History();
+        history.push(new EditorState("first"));
+        history.push(new EditorState("second"));
+        assertThat(history.getSize()).isEqualTo(2);
+
+        EditorState state = history.pop();
+        assertThat(state.getContent()).isEqualTo("second");
+        assertThat(history.getSize()).isEqualTo(1);
+    }
+
 }
