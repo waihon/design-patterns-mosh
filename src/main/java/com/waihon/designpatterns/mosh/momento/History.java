@@ -13,4 +13,16 @@ public class History {
     public void push(EditorState state) {
         states.add(state);
     }
+
+    public EditorState pop() {
+        if (getSize() < 1) {
+            return null;
+        }
+
+        var lastIndex = getSize() - 1;
+        var lastState = states.get(lastIndex);
+        states.remove(lastState);
+
+        return lastState;
+    }
 }
