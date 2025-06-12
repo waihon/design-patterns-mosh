@@ -9,4 +9,8 @@ public class History {
     public int getSize() {
         return states.size();
     }
+
+    public void push(EditorState state) {
+        states.add(state);
+    }
 }
