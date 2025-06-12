@@ -72,4 +72,19 @@ public class MomentoTest {
         assertThat(history.pop()).isEqualTo(null);
     }
 
+    @Test
+    void testMomentoDesignPattern() {
+        var editor = new Editor();
+        var history = new History();
+
+        editor.setContent("first");
+        history.push(editor.createState());
+
+        editor.setContent("second");
+        history.push(editor.createState());
+
+        editor.setContent("third");
+        editor.restore(history.pop());
+        assertThat(editor.getContent()).isEqualTo("second");
+    }
 }
