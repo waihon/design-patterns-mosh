@@ -96,6 +96,17 @@ public class StateTest {
                 assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.ERASER);
             }
         }
+
+        @Nested
+        class WhenMouseUp {
+
+            @Test
+            void canvasShouldEraseSomething() {
+                canvas.mouseUp();
+
+                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.ERASE_SOMETHING);
+            }
+        }
     }
 
 }
