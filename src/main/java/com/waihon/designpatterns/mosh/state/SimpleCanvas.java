@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.state;
 
-public class Canvas {
+public class SimpleCanvas {
 
     private ToolType currentTool;
     private IconType currentIcon;
