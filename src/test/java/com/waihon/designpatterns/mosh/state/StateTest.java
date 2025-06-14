@@ -65,6 +65,17 @@ public class StateTest {
                 assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.BRUSH);
             }
         }
+
+        @Nested
+        class WhenMouseUp {
+
+            @Test
+            void canvasShouldDrawALine() {
+                canvas.mouseUp();
+
+                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.DRAW_LINE);
+            }
+        }
     }
 
 }
