@@ -11,6 +11,8 @@ public class Canvas {
             currentIcon = IconType.SELECTION;
         } else if (currentTool == ToolType.BRUSH) {
             currentIcon = IconType.BRUSH;
+        } else if (currentTool == ToolType.ERASER) {
+            currentIcon = IconType.ERASER;
         }
     }
 
