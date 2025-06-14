@@ -20,7 +20,7 @@ public class SimpleCanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(ToolType.SELECTION);
+            canvas.setCurrentToolType(ToolType.SELECTION);
         }
 
         @Nested
@@ -30,7 +30,7 @@ public class SimpleCanvasTest {
             void canvasShouldShowSelectionIcon() {
                 canvas.mouseDown();
 
-                assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.SELECTION);
+                assertThat(canvas.getCurrentIconType()).isEqualTo(IconType.SELECTION);
             }
         }
 
@@ -41,7 +41,7 @@ public class SimpleCanvasTest {
             void canvasShouldDrawDashedLine() {
                 canvas.mouseUp();
 
-                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.DRAW_DASHED_RECTANGLE);
+                assertThat(canvas.getCurrentActionType()).isEqualTo(ActionType.DRAW_DASHED_RECTANGLE);
             }
         }
 
@@ -52,7 +52,7 @@ public class SimpleCanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(ToolType.BRUSH);
+            canvas.setCurrentToolType(ToolType.BRUSH);
         }
 
         @Nested
@@ -62,7 +62,7 @@ public class SimpleCanvasTest {
             void canvasShouldShowBrushIcon() {
                 canvas.mouseDown();
 
-                assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.BRUSH);
+                assertThat(canvas.getCurrentIconType()).isEqualTo(IconType.BRUSH);
             }
         }
 
@@ -73,7 +73,7 @@ public class SimpleCanvasTest {
             void canvasShouldDrawALine() {
                 canvas.mouseUp();
 
-                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.DRAW_LINE);
+                assertThat(canvas.getCurrentActionType()).isEqualTo(ActionType.DRAW_LINE);
             }
         }
     }
@@ -83,7 +83,7 @@ public class SimpleCanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(ToolType.ERASER);
+            canvas.setCurrentToolType(ToolType.ERASER);
         }
 
         @Nested
@@ -93,7 +93,7 @@ public class SimpleCanvasTest {
             void canvasShouldShowEraserIcon() {
                 canvas.mouseDown();
 
-                assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.ERASER);
+                assertThat(canvas.getCurrentIconType()).isEqualTo(IconType.ERASER);
             }
         }
 
@@ -104,7 +104,7 @@ public class SimpleCanvasTest {
             void canvasShouldEraseSomething() {
                 canvas.mouseUp();
 
-                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.ERASE_SOMETHING);
+                assertThat(canvas.getCurrentActionType()).isEqualTo(ActionType.ERASE_SOMETHING);
             }
         }
     }

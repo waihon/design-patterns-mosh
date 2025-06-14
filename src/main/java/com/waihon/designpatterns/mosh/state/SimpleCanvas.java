@@ -2,52 +2,52 @@ package com.waihon.designpatterns.mosh.state;
 
 public class SimpleCanvas {
 
-    private ToolType currentTool;
-    private IconType currentIcon;
-    private ActionType currentAction;
+    private ToolType currentToolType;
+    private IconType currentIconType;
+    private ActionType currentActionType;
 
     public void mouseDown() {
-        if (currentTool == ToolType.SELECTION) {
-            currentIcon = IconType.SELECTION;
-        } else if (currentTool == ToolType.BRUSH) {
-            currentIcon = IconType.BRUSH;
-        } else if (currentTool == ToolType.ERASER) {
-            currentIcon = IconType.ERASER;
+        if (currentToolType == ToolType.SELECTION) {
+            currentIconType = IconType.SELECTION;
+        } else if (currentToolType == ToolType.BRUSH) {
+            currentIconType = IconType.BRUSH;
+        } else if (currentToolType == ToolType.ERASER) {
+            currentIconType = IconType.ERASER;
         }
     }
 
     public void mouseUp() {
-        if (currentTool == ToolType.SELECTION) {
-            currentAction = ActionType.DRAW_DASHED_RECTANGLE;
-        } else if (currentTool == ToolType.BRUSH) {
-            currentAction = ActionType.DRAW_LINE;
-        } else if (currentTool == ToolType.ERASER) {
-            currentAction = ActionType.ERASE_SOMETHING;
+        if (currentToolType == ToolType.SELECTION) {
+            currentActionType = ActionType.DRAW_DASHED_RECTANGLE;
+        } else if (currentToolType == ToolType.BRUSH) {
+            currentActionType = ActionType.DRAW_LINE;
+        } else if (currentToolType == ToolType.ERASER) {
+            currentActionType = ActionType.ERASE_SOMETHING;
         }
     }
 
-    public ToolType getCurrentTool() {
-        return currentTool;
+    public ToolType getCurrentToolType() {
+        return currentToolType;
     }
 
-    public void setCurrentTool(ToolType currentTool) {
-        this.currentTool = currentTool;
+    public void setCurrentToolType(ToolType currentToolType) {
+        this.currentToolType = currentToolType;
     }
 
-    public IconType getCurrentIcon() {
-        return currentIcon;
+    public IconType getCurrentIconType() {
+        return currentIconType;
     }
 
-    public void setCurrentIcon(IconType currentIcon) {
-        this.currentIcon = currentIcon;
+    public void setCurrentIconType(IconType currentIconType) {
+        this.currentIconType = currentIconType;
     }
 
-    public ActionType getCurrentAction() {
-        return currentAction;
+    public ActionType getCurrentActionType() {
+        return currentActionType;
     }
 
-    public void setCurrentAction(ActionType currentAction) {
-        this.currentAction = currentAction;
+    public void setCurrentActionType(ActionType currentActionType) {
+        this.currentActionType = currentActionType;
     }
 
 }
