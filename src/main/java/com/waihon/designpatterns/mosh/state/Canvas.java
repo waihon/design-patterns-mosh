@@ -21,6 +21,8 @@ public class Canvas {
             currentAction = ActionType.DRAW_DASHED_RECTANGLE;
         } else if (currentTool == ToolType.BRUSH) {
             currentAction = ActionType.DRAW_LINE;
+        } else if (currentTool == ToolType.ERASER) {
+            currentAction = ActionType.ERASE_SOMETHING;
         }
     }
 
