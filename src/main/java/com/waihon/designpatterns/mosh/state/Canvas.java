@@ -9,6 +9,8 @@ public class Canvas {
     public void mouseDown() {
         if (currentTool == ToolType.SELECTION) {
             currentIcon = IconType.SELECTION;
+        } else if (currentTool == ToolType.BRUSH) {
+            currentIcon = IconType.BRUSH;
         }
     }
 
