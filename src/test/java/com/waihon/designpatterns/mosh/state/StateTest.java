@@ -78,4 +78,24 @@ public class StateTest {
         }
     }
 
+    @Nested
+    class GivenCurrentToolIsEraser {
+
+        @BeforeEach
+        void selectTool() {
+            canvas.setCurrentTool(ToolType.ERASER);
+        }
+
+        @Nested
+        class WhenMouseDown {
+
+            @Test
+            void canvasShouldShowEraserIcon() {
+                canvas.mouseDown();
+
+                assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.ERASER);
+            }
+        }
+    }
+
 }
