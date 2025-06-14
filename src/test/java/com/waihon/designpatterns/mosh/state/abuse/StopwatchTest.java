@@ -18,4 +18,16 @@ public class StopwatchTest {
         assertThat(text.trim()).isEqualTo("Running");
     }
 
+    @Test
+    void stopwatchShouldStop_whenClicked_whenItIsRunning() throws Exception {
+        Stopwatch stopwatch = new Stopwatch();
+
+        stopwatch.click();
+        String text = tapSystemOut(() -> {
+            stopwatch.click();
+        });
+
+        assertThat(text.trim()).isEqualTo("Stopped");
+    }
+
 }
