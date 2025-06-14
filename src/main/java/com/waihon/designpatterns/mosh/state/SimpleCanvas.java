@@ -1,10 +1,6 @@
 package com.waihon.designpatterns.mosh.state;
 
-public class SimpleCanvas {
-
-    private ToolType currentToolType;
-    private IconType currentIconType;
-    private ActionType currentActionType;
+public class SimpleCanvas extends Canvas {
 
     public void mouseDown() {
         if (currentToolType == ToolType.SELECTION) {
@@ -24,30 +20,6 @@ public class SimpleCanvas {
         } else if (currentToolType == ToolType.ERASER) {
             currentActionType = ActionType.ERASE_SOMETHING;
         }
-    }
-
-    public ToolType getCurrentToolType() {
-        return currentToolType;
-    }
-
-    public void setCurrentToolType(ToolType currentToolType) {
-        this.currentToolType = currentToolType;
-    }
-
-    public IconType getCurrentIconType() {
-        return currentIconType;
-    }
-
-    public void setCurrentIconType(IconType currentIconType) {
-        this.currentIconType = currentIconType;
-    }
-
-    public ActionType getCurrentActionType() {
-        return currentActionType;
-    }
-
-    public void setCurrentActionType(ActionType currentActionType) {
-        this.currentActionType = currentActionType;
     }
 
 }
