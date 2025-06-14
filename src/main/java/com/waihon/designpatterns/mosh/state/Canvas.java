@@ -5,6 +5,7 @@ public abstract class Canvas {
     protected ToolType currentToolType;
     protected IconType currentIconType;
     protected ActionType currentActionType;
+    protected Tool currentTool;
 
     public abstract void mouseDown();
 
@@ -34,4 +35,11 @@ public abstract class Canvas {
         this.currentActionType = currentActionType;
     }
 
+    public Tool getCurrentTool() {
+        return currentTool;
+    }
+
+    public void setCurrentTool(Tool currentTool) {
+        this.currentTool = currentTool;
+    }
 }
