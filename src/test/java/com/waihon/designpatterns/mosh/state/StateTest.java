@@ -46,4 +46,25 @@ public class StateTest {
         }
 
     }
+
+    @Nested
+    class GivenCurrentToolIsBrush {
+
+        @BeforeEach
+        void selectTool() {
+            canvas.setCurrentTool(ToolType.BRUSH);
+        }
+
+        @Nested
+        class WhenMouseDown {
+
+            @Test
+            void canvasShouldShowBrushIcon() {
+                canvas.mouseDown();
+
+                assertThat(canvas.getCurrentIcon()).isEqualTo(IconType.BRUSH);
+            }
+        }
+    }
+
 }
