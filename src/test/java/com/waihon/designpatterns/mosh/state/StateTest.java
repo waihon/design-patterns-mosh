@@ -34,5 +34,16 @@ public class StateTest {
             }
         }
 
+        @Nested
+        class WhenMouseUp {
+
+            @Test
+            void canvasShouldDrawDashedLine() {
+                canvas.mouseUp();
+
+                assertThat(canvas.getCurrentAction()).isEqualTo(ActionType.DRAW_DASHED_RECTANGLE);
+            }
+        }
+
     }
 }
