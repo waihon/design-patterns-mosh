@@ -17,6 +17,8 @@ public class Canvas {
     public void mouseUp() {
         if (currentTool == ToolType.SELECTION) {
             currentAction = ActionType.DRAW_DASHED_RECTANGLE;
+        } else if (currentTool == ToolType.BRUSH) {
+            currentAction = ActionType.DRAW_LINE;
         }
     }
 
