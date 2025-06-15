@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class StopwatchTest {
+public class SimpleStopwatchTest {
 
     @Test
     void stopwatchShouldRun_whenClicked_whenItIsStoped() throws Exception {
-        Stopwatch stopwatch = new Stopwatch();
+        SimpleStopwatch stopwatch = new SimpleStopwatch();
 
         String text = tapSystemOut(() -> {
             stopwatch.click();
@@ -20,7 +20,7 @@ public class StopwatchTest {
 
     @Test
     void stopwatchShouldStop_whenClicked_whenItIsRunning() throws Exception {
-        Stopwatch stopwatch = new Stopwatch();
+        SimpleStopwatch stopwatch = new SimpleStopwatch();
 
         stopwatch.click();
         String text = tapSystemOut(() -> {

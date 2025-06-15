@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.state.abuse;
 
-public class Stopwatch {
+public class SimpleStopwatch {
 
     private boolean isRunning = false;
 
