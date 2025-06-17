@@ -30,4 +30,11 @@ public class BrowserHistoryTest {
         assertThat(lastItem).isEqualTo("https://example.org");
     }
 
+    @Test
+    void emptyHistoryShouldReturnNullWhenPopped() {
+        BrowserHistory history = new BrowserHistory();
+        String lastItem = history.pop();
+        assertThat(lastItem).isNull();
+    }
+
 }
