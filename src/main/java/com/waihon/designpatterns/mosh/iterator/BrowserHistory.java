@@ -14,4 +14,13 @@ public class BrowserHistory {
     public int getSize() {
         return urls.size();
     }
+
+    public void pop() {
+        if (getSize() == 0) {
+            return;
+        }
+
+        urls.removeLast();
+    }
+
 }
