@@ -15,12 +15,12 @@ public class BrowserHistory {
         return urls.size();
     }
 
-    public void pop() {
+    public String pop() {
         if (getSize() == 0) {
-            return;
+            return null;
         }
 
-        urls.removeLast();
+        return urls.removeLast();
     }
 
 }
