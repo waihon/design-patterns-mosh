@@ -13,4 +13,12 @@ public class BrowserHistoryTest {
         assertThat(history.getSize()).isEqualTo(1);
     }
 
+    @Test
+    void histroyShouldDecreaseInSizeWhenPopped() {
+        BrowserHistory history = new BrowserHistory();
+        history.push("https://example.com");
+        history.pop();
+        assertThat(history.getSize()).isEqualTo(0);
+    }
+
 }
