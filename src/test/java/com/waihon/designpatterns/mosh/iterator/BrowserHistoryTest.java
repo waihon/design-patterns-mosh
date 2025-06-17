@@ -21,4 +21,13 @@ public class BrowserHistoryTest {
         assertThat(history.getSize()).isEqualTo(0);
     }
 
+    @Test
+    void historyShouldReturnLastItemWhenPopped() {
+        BrowserHistory history = new BrowserHistory();
+        history.push("https://example.com");
+        history.push("https://example.org");
+        String lastItem = history.pop();
+        assertThat(lastItem).isEqualTo("https://example.org");
+    }
+
 }
