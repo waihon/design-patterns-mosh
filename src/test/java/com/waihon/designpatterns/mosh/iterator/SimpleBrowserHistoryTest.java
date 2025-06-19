@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class BrowserHistoryTest {
+public class SimpleBrowserHistoryTest {
 
     @Test
     void historyShouldIncreaseInSizeWhenPushed() {
-        BrowserHistory history = new BrowserHistory();
+        SimpleBrowserHistory history = new SimpleBrowserHistory();
         history.push("https://example.com");
         assertThat(history.getSize()).isEqualTo(1);
     }
 
     @Test
     void histroyShouldDecreaseInSizeWhenPopped() {
-        BrowserHistory history = new BrowserHistory();
+        SimpleBrowserHistory history = new SimpleBrowserHistory();
         history.push("https://example.com");
         history.pop();
         assertThat(history.getSize()).isEqualTo(0);
@@ -23,7 +23,7 @@ public class BrowserHistoryTest {
 
     @Test
     void historyShouldReturnLastItemWhenPopped() {
-        BrowserHistory history = new BrowserHistory();
+        SimpleBrowserHistory history = new SimpleBrowserHistory();
         history.push("https://example.com");
         history.push("https://example.org");
         String lastItem = history.pop();
@@ -32,7 +32,7 @@ public class BrowserHistoryTest {
 
     @Test
     void emptyHistoryShouldReturnNullWhenPopped() {
-        BrowserHistory history = new BrowserHistory();
+        SimpleBrowserHistory history = new SimpleBrowserHistory();
         String lastItem = history.pop();
         assertThat(lastItem).isNull();
     }

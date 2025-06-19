@@ -3,7 +3,7 @@ package com.waihon.designpatterns.mosh.iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowserHistory {
+public class SimpleBrowserHistory {
 
     private List<String> urls = new ArrayList<>();
 
