@@ -1,5 +1,7 @@
 package com.waihon.designpatterns.mosh.iterator;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +41,13 @@ public class SimpleBrowserHistoryTest {
     void emptyHistoryShouldReturnNullWhenPopped() {
         String lastItem = history.pop();
         assertThat(lastItem).isNull();
+    }
+
+    @Test
+    void historyHasAListOfUrls() {
+        history.push("https://example.com");
+        history.push("https://example.org");
+        assertThat(history.getUrls().size()).isEqualTo(2);
     }
 
 }
