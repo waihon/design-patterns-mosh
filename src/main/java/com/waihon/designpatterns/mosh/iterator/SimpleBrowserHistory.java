@@ -23,4 +23,8 @@ public class SimpleBrowserHistory {
         return urls.removeLast();
     }
 
+    public List getUrls() {
+        return urls;
+    }
+
 }
