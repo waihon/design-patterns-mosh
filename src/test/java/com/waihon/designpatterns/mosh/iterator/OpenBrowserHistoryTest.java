@@ -51,4 +51,11 @@ public class OpenBrowserHistoryTest {
         assertThat(methodExists).isEqualTo(false);
     }
 
+    @Test
+    void historyCanCreateAnIterator() {
+        Object iterator = history.createIterator();
+        boolean instanceOfIterator = iterator instanceof Iterator;
+        assertThat(instanceOfIterator).isEqualTo(true);
+    }
+
 }
