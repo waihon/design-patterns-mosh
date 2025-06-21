@@ -20,11 +20,7 @@ public class OpenBrowserHistory {
             return null;
         }
 
-        return urls.removeLast();
-    }
-
-    public List getUrls() {
-        return urls;
+        return urls.removeLast(); // Java 21
     }
 
 }
