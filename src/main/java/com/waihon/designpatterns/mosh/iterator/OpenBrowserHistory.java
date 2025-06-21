@@ -5,14 +5,16 @@ import java.util.List;
 
 public class OpenBrowserHistory {
 
-    private List<String> urls = new ArrayList<>();
+    private String[] urls = new String[10];
+    private int count = 0;
 
     public void push(String url) {
-        urls.add(url);
+        count++;
+        urls[count - 1] = url;
     }
 
     public int getSize() {
-        return urls.size();
+        return count;
     }
 
     public String pop() {
@@ -20,19 +22,21 @@ public class OpenBrowserHistory {
             return null;
         }
 
-        return urls.removeLast(); // Java 21
+        String lastItem = urls[count - 1];
+        count--;
+        return lastItem;
     }
 
     public Iterator<String> createIterator() {
-        return new ListIterator(this);
+        return new ArrayIterator(this);
     }
 
-    public class ListIterator implements Iterator<String> {
+    public class ArrayIterator implements Iterator<String> {
 
         private OpenBrowserHistory history;
         private int index;
 
-        public ListIterator(OpenBrowserHistory history) {
+        public ArrayIterator(OpenBrowserHistory history) {
             this.history = history;
         }
 
@@ -43,7 +47,7 @@ public class OpenBrowserHistory {
 
         @Override
         public String current() {
-            return history.urls.get(index);
+            return history.urls[index];
         }
 
         @Override
