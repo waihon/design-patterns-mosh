@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class ImageStorageTest {
+public class SimpleImageStorageTest {
 
-    private ImageStorage imageStorage;
+    private SimpleImageStorage imageStorage;
     private String fileName;
 
     @BeforeEach
     void setUp() {
-        imageStorage = new ImageStorage();
+        imageStorage = new SimpleImageStorage();
     }
 
     @Nested
