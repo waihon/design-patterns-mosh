@@ -32,7 +32,7 @@ public class ImageStorageTest {
                 }
 
                 @Test
-                void imageStorageShouldCompressUsingJpeg() throws Exception {
+                void shouldCompressUsingJpeg() throws Exception {
                     String text = tapSystemOut(() -> {
                         imageStorage.store(fileName);
                     });
@@ -51,7 +51,7 @@ public class ImageStorageTest {
                 }
 
                 @Test
-                void imageStorageShouldCompressUsingPng() throws Exception {
+                void shouldCompressUsingPng() throws Exception {
                     String text = tapSystemOut(() -> {
                         imageStorage.store(fileName);
                     });
@@ -61,6 +61,30 @@ public class ImageStorageTest {
                 }
             }
 
+        }
+
+        @Nested
+        class WithFilter {
+
+            @Nested
+            class SetToBlackAndWhite {
+
+                @BeforeEach
+                void selectFilter() {
+                    imageStorage.setFilter(FilterType.BLACK_AND_WHITE);
+                }
+
+                @Test
+                void shouldFilterUsingBlackAndWhite() throws Exception {
+                    String text = tapSystemOut(() -> {
+                        imageStorage.store(fileName);
+                    });
+
+                    assertThat(text).contains("Filtering using Black and White.");
+
+                }
+
+            }
         }
 
     }
