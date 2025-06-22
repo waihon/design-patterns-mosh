@@ -3,6 +3,7 @@ package com.waihon.designpatterns.mosh.strategy;
 public class ImageStorage {
 
     private CompressorType compressor;
+    private FilterType filter;
 
     public void store(String fileName) {
         if (compressor == CompressorType.JPEG) {
@@ -10,6 +11,8 @@ public class ImageStorage {
         } else if (compressor == CompressorType.PNG) {
             System.out.println("Compressing using PNG.");
         }
+
+        System.out.println("Filtering using Black and White.");
     }
 
     public CompressorType getCompressor() {
@@ -19,4 +22,13 @@ public class ImageStorage {
     public void setCompressor(CompressorType compressor) {
         this.compressor = compressor;
     }
+
+    public FilterType getFilter() {
+        return filter;
+    }
+
+    public void setFilter(FilterType filter) {
+        this.filter = filter;
+    }
+
 }
