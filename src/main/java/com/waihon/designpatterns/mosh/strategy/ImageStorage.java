@@ -5,8 +5,11 @@ public class ImageStorage {
     private CompressorType compressor;
 
     public void store(String fileName) {
-        System.out.println("Compressing using JPEG.");
-        System.out.println("Applying B&W filter.");
+        if (compressor == CompressorType.JPEG) {
+            System.out.println("Compressing using JPEG.");
+        } else if (compressor == CompressorType.PNG) {
+            System.out.println("Compressing using PNG.");
+        }
     }
 
     public CompressorType getCompressor() {
