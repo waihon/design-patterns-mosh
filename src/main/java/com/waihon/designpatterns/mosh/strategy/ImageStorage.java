@@ -12,7 +12,11 @@ public class ImageStorage {
             System.out.println("Compressing using PNG.");
         }
 
-        System.out.println("Filtering using Black and White.");
+        if (filter == FilterType.BLACK_AND_WHITE) {
+            System.out.println("Filtering using Black and White.");
+        } else if (filter == FilterType.HIGH_CONTRAST) {
+            System.out.println("Filtering using High Contrast.");
+        }
     }
 
     public CompressorType getCompressor() {
