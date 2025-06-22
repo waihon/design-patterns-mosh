@@ -42,6 +42,25 @@ public class ImageStorageTest {
                 }
             }
 
+            @Nested
+            class SetToPng {
+
+                @BeforeEach
+                void selectCompressor() {
+                    imageStorage.setCompressor(CompressorType.PNG);
+                }
+
+                @Test
+                void imageStorageShouldCompressUsingPng() throws Exception {
+                    String text = tapSystemOut(() -> {
+                        imageStorage.store(fileName);
+                    });
+
+                    assertThat(text).contains("Compressing using PNG.");
+
+                }
+            }
+
         }
 
     }
