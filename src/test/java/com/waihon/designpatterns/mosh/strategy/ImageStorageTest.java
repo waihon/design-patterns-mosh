@@ -85,6 +85,26 @@ public class ImageStorageTest {
                 }
 
             }
+
+            @Nested
+            class SetToHighContrast {
+
+                @BeforeEach
+                void selectFilter() {
+                    imageStorage.setFilter(FilterType.HIGH_CONTRAST);
+                }
+
+                @Test
+                void shouldFilterUsingHighContrast () throws Exception {
+                    String text = tapSystemOut(() -> {
+                        imageStorage.store(fileName);
+                    });
+
+                    assertThat(text).contains("Filtering using High Contrast.");
+
+                }
+
+            }
         }
 
     }
