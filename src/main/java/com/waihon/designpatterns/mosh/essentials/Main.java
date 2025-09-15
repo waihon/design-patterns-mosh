@@ -4,11 +4,19 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        // Classes
         User user = new User("Waihon");
         user.sayHello();
 
+        // Interfaces
         TaxCalculator calculator = getCalculator();
         System.out.println(calculator.calculateTax());
+
+        // Encapsulation
+        var account = new Account();
+        account.deposit(100);
+        account.withdraw(45);
+        System.out.println(account.getBalance());
     }
 
     public static TaxCalculator getCalculator() {
