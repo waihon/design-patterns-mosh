@@ -1,15 +1,8 @@
 package com.waihon.designpatterns.mosh.template;
 
-public class GenerateReportTask {
-    private AuditTrail auditTrail;
-
-    public GenerateReportTask() {
-        this.auditTrail = new AuditTrail();
-    }
-
-    public void execute() {
-        auditTrail.record();
-
+public class GenerateReportTask extends Task {
+    @Override
+    public void doExecute() {
         System.out.println("Generate Report");
     }
 }
