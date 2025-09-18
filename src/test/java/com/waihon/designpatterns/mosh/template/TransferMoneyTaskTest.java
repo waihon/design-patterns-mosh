@@ -7,7 +7,7 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TransferMoneyTaskTest {
-    private TransferMoneyTask task;
+    private Task task;
 
     @BeforeEach
     void setUp() {
