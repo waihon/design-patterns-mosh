@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.momento;
+package com.waihon.designpatterns.mosh.memento;
 
 import java.util.ArrayList;
 import java.util.List;

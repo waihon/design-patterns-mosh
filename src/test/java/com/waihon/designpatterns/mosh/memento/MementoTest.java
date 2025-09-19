@@ -1,10 +1,10 @@
-package com.waihon.designpatterns.mosh.momento;
+package com.waihon.designpatterns.mosh.memento;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class MomentoTest {
+public class MementoTest {
     @Test
     void editorShouldReturnItsContent() {
         Editor editor = new Editor();
@@ -73,7 +73,7 @@ public class MomentoTest {
     }
 
     @Test
-    void testMomentoDesignPattern() {
+    void testMementoDesignPattern() {
         var editor = new Editor();
         var history = new History();
 

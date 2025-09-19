@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.momento;
+package com.waihon.designpatterns.mosh.memento;
 
 public class EditorState {
     private final String content;
