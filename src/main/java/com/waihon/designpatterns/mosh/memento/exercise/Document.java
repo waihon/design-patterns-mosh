@@ -1,5 +1,7 @@
 package com.waihon.designpatterns.mosh.memento.exercise;
 
+import java.util.Objects;
+
 public class Document {
     private String content;
     private String fontName;
@@ -33,5 +35,19 @@ public class Document {
 
     public void setFontSize(int fontSize) {
         this.fontSize = fontSize;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null || getClass() != other.getClass()) return false;
+        Document document = (Document) other;
+        return fontSize == document.fontSize &&
+                Objects.equals(content, document.content) &&
+                Objects.equals(fontName, document.fontName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(content, fontName, fontSize);
     }
 }
