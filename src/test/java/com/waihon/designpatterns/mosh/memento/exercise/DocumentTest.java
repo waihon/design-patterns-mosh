@@ -27,4 +27,23 @@ public class DocumentTest {
     void shouldHaveDefaultFontSize() {
         assertThat(document.getFontSize()).isEqualTo(11);
     }
+
+    @Test
+    void equalityTest() {
+        var document1 = new Document();
+        var document2 = new Document();
+
+        assertThat(document1).isEqualTo(document2);
+    }
+
+    @Test
+    void inequalityTest() {
+        var document1 = new Document();
+        var document2 = new Document();
+
+        document1.setFontName("Helvatica");
+        document2.setFontName("Menlo");
+
+        assertThat(document1).isNotEqualTo(document2);
+    }
 }
