@@ -22,4 +22,12 @@ public class EditorTest {
 
         assertThat(editorDocument).isEqualTo(document);
     }
+
+    @Test
+    void canCreateEditorState() {
+        var editorState = editor.createEditorState();
+        var editorStateDocument = editorState.getDocument();
+
+        assertThat(document).isEqualTo(editorStateDocument);
+    }
 }
