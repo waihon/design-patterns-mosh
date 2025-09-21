@@ -13,6 +13,12 @@ public class Document {
         this.fontSize = 11;
     }
 
+    public Document(String content, String fontName, int fontSize) {
+        this.content = content;
+        this.fontName = fontName;
+        this.fontSize = fontSize;
+    }
+
     public String getContent() {
         return content;
     }
