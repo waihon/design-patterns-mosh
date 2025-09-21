@@ -10,4 +10,13 @@ public class Editor {
     public void setDocument(Document document) {
         this.document = document;
     }
+
+    public EditorState createEditorState() {
+        var documentSnapshot = new Document(
+                document.getContent(),
+                document.getFontName(),
+                document.getFontSize());
+
+        return new EditorState(documentSnapshot);
+    }
 }
