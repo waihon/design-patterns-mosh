@@ -56,4 +56,13 @@ public class Document {
     public int hashCode() {
         return Objects.hash(content, fontName, fontSize);
     }
+
+    @Override
+    public String toString() {
+        return "Document{" +
+                "content='" + content + '\'' +
+                ", fontName='" + fontName + '\'' +
+                ", fontSize=" + fontSize +
+                '}';
+    }
 }
