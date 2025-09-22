@@ -25,9 +25,21 @@ public class EditorTest {
 
     @Test
     void canCreateEditorState() {
-        var editorState = editor.createEditorState();
+        var editorState = editor.createState();
         var editorStateDocument = editorState.getDocument();
 
         assertThat(document).isEqualTo(editorStateDocument);
+    }
+
+    @Test
+    void canRestoreState() {
+        document.setContent("Content1");
+        EditorState state1 = editor.createState();
+
+        document.setContent("Content2");
+        EditorState state2 = editor.createState();
+
+        editor.restore(state1);
+        assertThat(editor.getDocument()).isEqualTo(state1.getDocument());
     }
 }
