@@ -12,12 +12,7 @@ public class Editor {
     }
 
     public EditorState createState() {
-        var documentSnapshot = new Document(
-                document.getContent(),
-                document.getFontName(),
-                document.getFontSize());
-
-        return new EditorState(documentSnapshot);
+        return new EditorState(document);
     }
 
     public void restore(EditorState state) {
