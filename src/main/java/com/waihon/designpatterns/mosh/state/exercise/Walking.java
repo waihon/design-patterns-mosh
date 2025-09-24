@@ -1,0 +1,15 @@
+package com.waihon.designpatterns.mosh.state.exercise;
+
+public class Walking implements Travel {
+    @Override
+    public Object getEta() {
+        System.out.println("Calculating ETA (walking)");
+        return 4;
+    }
+
+    @Override
+    public Object getDirection() {
+        System.out.println("Calculating Direction (walking)");
+        return 4;
+    }
+}
