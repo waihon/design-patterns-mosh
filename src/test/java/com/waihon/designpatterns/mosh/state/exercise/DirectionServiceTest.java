@@ -21,7 +21,7 @@ public class DirectionServiceTest {
     class GivenTravelModeIsDriving {
         @BeforeEach
         void selectTravelMode() {
-            directionService.setTravelMode(TravelMode.DRIVING);
+            directionService.setTravel(new Driving());
         }
 
         @Nested
@@ -58,7 +58,7 @@ public class DirectionServiceTest {
     class GivenTravelModeIsBicycling {
         @BeforeEach
         void selectTravelMode() {
-            directionService.setTravelMode(TravelMode.BICYCLING);
+            directionService.setTravel(new Bicycling());
         }
 
         @Nested
@@ -95,7 +95,7 @@ public class DirectionServiceTest {
     class GivenTravelModeIsTransit {
         @BeforeEach
         void selectTravelMode() {
-            directionService.setTravelMode(TravelMode.TRANSIT);
+            directionService.setTravel(new Transit());
         }
 
         @Nested
@@ -132,7 +132,7 @@ public class DirectionServiceTest {
     class GivenTravelModeIsWalking {
         @BeforeEach
         void selectTravelMode() {
-            directionService.setTravelMode(TravelMode.WALKING);
+            directionService.setTravel(new Walking());
         }
 
         @Nested
