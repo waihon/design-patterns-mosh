@@ -31,6 +31,6 @@ public class IteratorTest {
             iterator.next();
         }
 
-        assertThat(products).isEqualTo(Arrays.asList("Product One", "Product Two", "Product Three"));
+        assertThat(productNames).isEqualTo(Arrays.asList("Product One", "Product Two", "Product Three"));
     }
 }
