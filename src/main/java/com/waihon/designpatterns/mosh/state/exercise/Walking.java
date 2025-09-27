@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.state.exercise;
 
-public class Walking implements Travel {
+public class Walking implements TravelMode {
     @Override
     public Object getEta() {
         System.out.println("Calculating ETA (walking)");

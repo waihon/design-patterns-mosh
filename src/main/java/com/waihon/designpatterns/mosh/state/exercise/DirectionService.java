@@ -1,21 +1,21 @@
 package com.waihon.designpatterns.mosh.state.exercise;
 
 public class DirectionService {
-    private Travel travel;
+    private TravelMode travelMode;
 
     public Object getEta() {
-        return travel.getEta();
+        return travelMode.getEta();
     }
 
     public Object getDirection() {
-        return travel.getDirection();
+        return travelMode.getDirection();
     }
 
-    public Travel getTravel() {
-        return travel;
+    public TravelMode getTravelMode() {
+        return travelMode;
     }
 
-    public void setTravel(Travel travel) {
-        this.travel = travel;
+    public void setTravelMode(TravelMode travelMode) {
+        this.travelMode = travelMode;
     }
 }
