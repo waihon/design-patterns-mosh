@@ -1,20 +1,16 @@
 package com.waihon.designpatterns.mosh.strategy.exercise;
 
 public class ChatClient {
-    private String encryptionAlgorithm;
+    private Encryptor encryptor;
 
-    public ChatClient(String encryptionAlgorithm) {
-        this.encryptionAlgorithm = encryptionAlgorithm;
+    public ChatClient(Encryptor encryptor) {
+        this.encryptor = encryptor;
     }
 
     public void send(String message) {
-        if (encryptionAlgorithm == "DES")
-            System.out.println("Encrypting message using DES");
-        else if (encryptionAlgorithm == "AES")
-            System.out.println("Encrypting message using AES");
-        else
-            throw new UnsupportedOperationException("Unsupported encryption algorithm");
+        String encryptedMessage = encryptor.encrypt(message);
 
         System.out.println("Sending the encrypted message...");
+        System.out.println(encryptedMessage);
     }
 }
