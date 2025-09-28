@@ -9,12 +9,17 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ChatClientTest {
     private ChatClient chatClient;
+    private String message;
 
     @Nested
     class WhenSendingMessage {
 
         @Nested
         class WithEncryptor {
+            @BeforeEach
+            void setUp() {
+                message = "Hello World";
+            }
 
             @Nested
             class SetToDes {
@@ -26,11 +31,12 @@ public class ChatClientTest {
                 @Test
                 void shouldEncryptUsingDesAlgorithm() throws Exception {
                     var text = tapSystemOut(() -> {
-                        chatClient.send("Hello World");
+                        chatClient.send(message);
                     });
 
                     assertThat(text).contains("Encrypting message using DES");
                     assertThat(text).contains("Sending the encrypted message...");
+                    assertThat(text).contains("Encrypted " + message);
                 }
             }
 
@@ -49,6 +55,7 @@ public class ChatClientTest {
 
                     assertThat(text).contains("Encrypting message using AES");
                     assertThat(text).contains("Sending the encrypted message...");
+                    assertThat(text).contains("Encrypted " + message);
                 }
             }
         }
