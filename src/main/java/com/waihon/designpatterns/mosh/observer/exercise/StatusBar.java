@@ -3,7 +3,7 @@ package com.waihon.designpatterns.mosh.observer.exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatusBar {
+public class StatusBar implements Observer {
     private List<Stock> stocks = new ArrayList<>();
 
     public void addStock(Stock stock) {
@@ -13,5 +13,10 @@ public class StatusBar {
     public void show() {
         for (var stock : stocks)
             System.out.println(stock);
+    }
+
+    @Override
+    public void update() {
+        show();
     }
 }
