@@ -23,6 +23,13 @@ public class StockListViewTest {
         stock5 = new Stock("MSFT", 513.58f);
 
         stockListView = new StockListView();
+
+        stock1.addObserver(stockListView);
+        stock2.addObserver(stockListView);
+        stock3.addObserver(stockListView);
+        stock4.addObserver(stockListView);
+        stock5.addObserver(stockListView);
+
         stockListView.addStock(stock1);
         stockListView.addStock(stock2);
         stockListView.addStock(stock3);
@@ -40,6 +47,20 @@ public class StockListViewTest {
         assertThat(text).contains("Stock{symbol='AAPL', price=252.29}");
         assertThat(text).contains("Stock{symbol='GOOG', price=253.79}");
         assertThat(text).contains("Stock{symbol='AMZN', price=213.04}");
+        assertThat(text).contains("Stock{symbol='MSFT', price=513.58}");
+    }
+
+    @Test
+    void stockPricesGotUpdated() throws Exception {
+        var text = tapSystemOut(() -> {
+            stock2.setPrice(250.0f);
+            stock4.setPrice(210.0f);
+        });
+
+        assertThat(text).contains("Stock{symbol='NVDA', price=183.22}");
+        assertThat(text).contains("Stock{symbol='AAPL', price=250.0}");
+        assertThat(text).contains("Stock{symbol='GOOG', price=253.79}");
+        assertThat(text).contains("Stock{symbol='AMZN', price=210.0}");
         assertThat(text).contains("Stock{symbol='MSFT', price=513.58}");
     }
 }
