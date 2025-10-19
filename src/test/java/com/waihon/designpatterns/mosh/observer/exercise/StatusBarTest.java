@@ -15,8 +15,10 @@ public class StatusBarTest {
     void setUp() {
         stock1 = new Stock("NVDA", 183.22f);
         stock2 = new Stock("AAPL", 252.29f);
-
         statusBar = new StatusBar();
+
+        stock1.addObserver(statusBar);
+        stock2.addObserver(statusBar);
         statusBar.addStock(stock1);
         statusBar.addStock(stock2);
     }
@@ -32,5 +34,16 @@ public class StatusBarTest {
         assertThat(text).doesNotContain("Stock{symbol='GOOG', price=253.79}");
         assertThat(text).doesNotContain("Stock{symbol='AMZN', price=213.04}");
         assertThat(text).doesNotContain("Stock{symbol='MSFT', price=513.58}");
+    }
+
+    @Test
+    void stockPricesGotUpdated() throws Exception {
+        var text = tapSystemOut(() -> {
+            stock1.setPrice(180.00f);
+            stock2.setPrice(250.00f);
+        });
+
+        assertThat(text).contains("Stock{symbol='NVDA', price=180.0}");
+        assertThat(text).contains("Stock{symbol='AAPL', price=250.0}");
     }
 }
