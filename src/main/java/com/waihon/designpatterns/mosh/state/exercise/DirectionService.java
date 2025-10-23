@@ -3,6 +3,10 @@ package com.waihon.designpatterns.mosh.state.exercise;
 public class DirectionService {
     private TravelMode travelMode;
 
+    public DirectionService(TravelMode travelMode) {
+        this.travelMode = travelMode;
+    }
+
     public Object getEta() {
         return travelMode.getEta();
     }
