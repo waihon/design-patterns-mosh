@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.simple;
 
 public class SimpleCanvas extends Canvas {
 

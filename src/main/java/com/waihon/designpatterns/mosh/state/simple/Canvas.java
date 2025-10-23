@@ -1,11 +1,12 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.simple;
+
+import com.waihon.designpatterns.mosh.state.open.Tool;
 
 public abstract class Canvas {
 
     protected ToolType currentToolType;
     protected IconType currentIconType;
     protected ActionType currentActionType;
-    protected Tool currentTool;
 
     public abstract void mouseDown();
 
@@ -33,13 +34,5 @@ public abstract class Canvas {
 
     public void setCurrentActionType(ActionType currentActionType) {
         this.currentActionType = currentActionType;
-    }
-
-    public Tool getCurrentTool() {
-        return currentTool;
-    }
-
-    public void setCurrentTool(Tool currentTool) {
-        this.currentTool = currentTool;
     }
 }
