@@ -2,15 +2,31 @@ package com.waihon.designpatterns.mosh.state.simple;
 
 import com.waihon.designpatterns.mosh.state.open.Tool;
 
-public abstract class Canvas {
+public class Canvas {
 
     protected ToolType currentToolType;
     protected IconType currentIconType;
     protected ActionType currentActionType;
 
-    public abstract void mouseDown();
+    public void mouseDown() {
+        if (currentToolType == ToolType.SELECTION) {
+            currentIconType = IconType.SELECTION;
+        } else if (currentToolType == ToolType.BRUSH) {
+            currentIconType = IconType.BRUSH;
+        } else if (currentToolType == ToolType.ERASER) {
+            currentIconType = IconType.ERASER;
+        }
+    }
 
-    public abstract void mouseUp();
+    public void mouseUp() {
+        if (currentToolType == ToolType.SELECTION) {
+            currentActionType = ActionType.DRAW_DASHED_RECTANGLE;
+        } else if (currentToolType == ToolType.BRUSH) {
+            currentActionType = ActionType.DRAW_LINE;
+        } else if (currentToolType == ToolType.ERASER) {
+            currentActionType = ActionType.ERASE_SOMETHING;
+        }
+    }
 
     public ToolType getCurrentToolType() {
         return currentToolType;

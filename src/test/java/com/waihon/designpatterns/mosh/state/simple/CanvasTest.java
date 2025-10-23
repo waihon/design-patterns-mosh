@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class SimpleCanvasTest {
+public class CanvasTest {
 
-    SimpleCanvas canvas;
+    Canvas canvas;
 
     @BeforeEach
     void setUp() {
-        canvas = new SimpleCanvas();
+        canvas = new Canvas();
     }
 
     @Nested
