@@ -1,12 +1,16 @@
 package com.waihon.designpatterns.mosh.state.open;
 
-public abstract class Canvas {
+public class Canvas {
 
     protected Tool currentTool;
 
-    public abstract void mouseDown();
+    public void mouseDown() {
+        currentTool.mouseDown();
+    }
 
-    public abstract void mouseUp();
+    public void mouseUp() {
+        currentTool.mouseUp();
+    }
 
     public Tool getCurrentTool() {
         return currentTool;

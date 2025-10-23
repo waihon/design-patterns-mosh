@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class OpenCanvasTest {
+public class CanvasTest {
 
-    OpenCanvas canvas;
+    Canvas canvas;
 
     @BeforeEach
     void setUp() {
-        canvas = new OpenCanvas();
+        canvas = new Canvas();
     }
 
     @Nested
