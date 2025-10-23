@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.simple;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
