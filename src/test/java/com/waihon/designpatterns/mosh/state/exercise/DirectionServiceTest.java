@@ -14,7 +14,16 @@ public class DirectionServiceTest {
 
     @BeforeEach
     void setUp() {
-        directionService = new DirectionService();
+        directionService = new DirectionService(new Walking());
+    }
+
+    @Test
+    void travelModeInitializedAsWalking() throws Exception {
+        var text = tapSystemOut(() -> {
+            directionService.getDirection();
+        });
+
+        assertThat(text).contains("Calculating Direction (walking)");
     }
 
     @Nested
