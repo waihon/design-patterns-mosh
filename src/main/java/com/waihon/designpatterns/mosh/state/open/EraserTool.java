@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.open;
 
 public class EraserTool implements Tool {
 
@@ -10,11 +10,11 @@ public class EraserTool implements Tool {
 
     @Override
     public void mouseDown() {
-        canvas.setCurrentIconType(IconType.ERASER);
+        System.out.println("Eraser icon");
     }
 
     @Override
     public void mouseUp() {
-        canvas.setCurrentActionType(ActionType.ERASE_SOMETHING);
+        System.out.println("Erase something");
     }
 }

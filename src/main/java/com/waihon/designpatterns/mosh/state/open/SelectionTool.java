@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.open;
 
 public class SelectionTool implements Tool {
 
@@ -10,12 +10,12 @@ public class SelectionTool implements Tool {
 
     @Override
     public void mouseDown() {
-        canvas.setCurrentIconType(IconType.SELECTION);
+        System.out.println("Selection icon");
     }
 
     @Override
     public void mouseUp() {
-        canvas.setCurrentActionType(ActionType.DRAW_DASHED_RECTANGLE);
+        System.out.println("Draw dashed rectangle");
     }
 
 }

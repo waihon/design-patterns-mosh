@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.open;
 
 public class BrushTool implements Tool {
 
@@ -10,12 +10,12 @@ public class BrushTool implements Tool {
 
     @Override
     public void mouseDown() {
-       canvas.setCurrentIconType(IconType.BRUSH);
+        System.out.println("Brush icon");
     }
 
     @Override
     public void mouseUp() {
-        canvas.setCurrentActionType(ActionType.DRAW_LINE);
+        System.out.println("Draw a line");
     }
 
 }

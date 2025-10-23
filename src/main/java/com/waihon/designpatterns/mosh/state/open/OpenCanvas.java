@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.state;
+package com.waihon.designpatterns.mosh.state.open;
 
 public class OpenCanvas extends Canvas {
     @Override
