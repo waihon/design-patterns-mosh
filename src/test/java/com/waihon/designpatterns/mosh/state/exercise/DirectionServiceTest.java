@@ -25,7 +25,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetEta {
+        class WhenGetEta {
             @Test
             void shouldReturnEta() throws Exception {
                 var eta = new AtomicReference<Object>();
@@ -40,7 +40,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetDirection {
+        class WhenGetDirection {
             @Test
             void shouldReturnDirection() throws Exception  {
                 var direction = new AtomicReference<Object>();
@@ -62,7 +62,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetEta {
+        class WhenGetEta {
             @Test
             void shouldReturnEta() throws Exception {
                 var eta = new AtomicReference<Object>();
@@ -77,7 +77,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetDirection {
+        class WhenGetDirection {
             @Test
             void shouldReturnDirection() throws Exception  {
                 var direction = new AtomicReference<Object>();
@@ -99,7 +99,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetEta {
+        class WhenGetEta {
             @Test
             void shouldReturnEta() throws Exception {
                 var eta = new AtomicReference<Object>();
@@ -114,7 +114,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetDirection {
+        class WhenGetDirection {
             @Test
             void shouldReturnDirection() throws Exception  {
                 var direction = new AtomicReference<Object>();
@@ -136,7 +136,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetEta {
+        class WhenGetEta {
             @Test
             void shouldReturnEta() throws Exception {
                 var eta = new AtomicReference<Object>();
@@ -151,7 +151,7 @@ public class DirectionServiceTest {
         }
 
         @Nested
-        class whenGetDirection {
+        class WhenGetDirection {
             @Test
             void shouldReturnDirection() throws Exception  {
                 var direction = new AtomicReference<Object>();
