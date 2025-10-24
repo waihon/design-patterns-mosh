@@ -1,6 +1,6 @@
-package com.waihon.designpatterns.mosh.strategy;
+package com.waihon.designpatterns.mosh.strategy.simple;
 
-public class SimpleImageStorage {
+public class ImageStorage {
 
     private CompressorType compressor;
     private FilterType filter;

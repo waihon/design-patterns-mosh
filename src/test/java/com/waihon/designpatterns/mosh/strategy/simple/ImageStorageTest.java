@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.strategy;
+package com.waihon.designpatterns.mosh.strategy.simple;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class SimpleImageStorageTest {
+public class ImageStorageTest {
 
-    private SimpleImageStorage imageStorage;
+    private ImageStorage imageStorage;
     private String fileName;
 
     @BeforeEach
     void setUp() {
-        imageStorage = new SimpleImageStorage();
+        imageStorage = new ImageStorage();
     }
 
     @Nested
