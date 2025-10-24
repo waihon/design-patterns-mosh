@@ -50,7 +50,7 @@ public class ChatClientTest {
                 @Test
                 void shouldEncryptUsingAesAlgorithm() throws Exception {
                     var text = tapSystemOut(() -> {
-                        chatClient.send("Hello World");
+                        chatClient.send(message);
                     });
 
                     assertThat(text).contains("Encrypting message using AES");
