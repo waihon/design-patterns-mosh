@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.strategy;
+package com.waihon.designpatterns.mosh.strategy.open;
 
 public class HighContrastFilter implements Filter {
     @Override

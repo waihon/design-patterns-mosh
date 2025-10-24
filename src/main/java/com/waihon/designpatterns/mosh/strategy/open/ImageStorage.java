@@ -1,6 +1,6 @@
-package com.waihon.designpatterns.mosh.strategy;
+package com.waihon.designpatterns.mosh.strategy.open;
 
-public class OpenImageStorage {
+public class ImageStorage {
 
     private Compressor compressor;
     private Filter filter;
