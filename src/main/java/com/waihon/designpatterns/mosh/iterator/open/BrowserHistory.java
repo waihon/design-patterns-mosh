@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.iterator.open;
 
-public class BrowserHistory {
+public class BrowserHistory implements Aggregate<String> {
 
     private String[] urls = new String[10];
     private int count = 0;
