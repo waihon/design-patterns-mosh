@@ -2,12 +2,6 @@ package com.waihon.designpatterns.mosh.state.open;
 
 public class BrushTool implements Tool {
 
-    private Canvas canvas;
-
-    public BrushTool(Canvas canvas) {
-        this.canvas = canvas;
-    }
-
     @Override
     public void mouseDown() {
         System.out.println("Brush icon");

@@ -21,7 +21,7 @@ public class CanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(new SelectionTool(canvas));
+            canvas.setCurrentTool(new SelectionTool());
         }
 
         @Nested
@@ -57,7 +57,7 @@ public class CanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(new BrushTool(canvas));
+            canvas.setCurrentTool(new BrushTool());
         }
 
         @Nested
@@ -92,7 +92,7 @@ public class CanvasTest {
 
         @BeforeEach
         void selectTool() {
-            canvas.setCurrentTool(new EraserTool(canvas));
+            canvas.setCurrentTool(new EraserTool());
         }
 
         @Nested
