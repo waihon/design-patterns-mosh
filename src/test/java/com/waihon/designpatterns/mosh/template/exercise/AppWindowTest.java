@@ -20,7 +20,7 @@ public class AppWindowTest {
             window.close();
         });
 
-        assertThat(text).contains("App Window Before Close");
+        assertThat(text).contains("Before closing App Window");
     }
 
     @Test
@@ -29,7 +29,7 @@ public class AppWindowTest {
             window.close();
         });
 
-        assertThat(text).contains("App Window Close");
+        assertThat(text).contains("Close App Window");
     }
 
     @Test
@@ -38,6 +38,6 @@ public class AppWindowTest {
             window.close();
         });
 
-        assertThat(text).contains("App Window After Close");
+        assertThat(text).contains("After closing App Window");
     }
 }
