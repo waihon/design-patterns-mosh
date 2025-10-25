@@ -16,9 +16,9 @@ public class IteratorTest {
     @BeforeEach
     void setUp() {
         collection = new ProductCollection();
-        collection.add(new Product(1, "Product One"));
-        collection.add(new Product(2, "Product Two"));
-        collection.add(new Product(3, "Product Three"));
+        collection.push(new Product(1, "Product One"));
+        collection.push(new Product(2, "Product Two"));
+        collection.push(new Product(3, "Product Three"));
         iterator = collection.createIterator();
     }
 

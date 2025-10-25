@@ -3,11 +3,22 @@ package com.waihon.designpatterns.mosh.iterator.exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductCollection {
+public class ProductCollection implements Aggregate<Product> {
     private List<Product> products = new ArrayList<>();
 
-    public void add(Product product) {
+    @Override
+    public void push(Product product) {
         products.add(product);
+    }
+
+    @Override
+    public Product pop() {
+        return products.removeLast();
+    }
+
+    @Override
+    public int getSize() {
+        return products.size();
     }
 
     public Iterator<Product> createIterator() {
