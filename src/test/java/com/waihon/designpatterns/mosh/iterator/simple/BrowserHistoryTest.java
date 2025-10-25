@@ -1,19 +1,17 @@
-package com.waihon.designpatterns.mosh.iterator;
-
-import java.util.List;
+package com.waihon.designpatterns.mosh.iterator.simple;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class SimpleBrowserHistoryTest {
+public class BrowserHistoryTest {
 
-    SimpleBrowserHistory history;
+    BrowserHistory history;
 
     @BeforeEach
     void setUp() {
-        history = new SimpleBrowserHistory();
+        history = new BrowserHistory();
     }
 
     @Test

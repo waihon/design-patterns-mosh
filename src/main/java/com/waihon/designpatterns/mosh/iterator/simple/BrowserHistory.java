@@ -1,9 +1,9 @@
-package com.waihon.designpatterns.mosh.iterator;
+package com.waihon.designpatterns.mosh.iterator.simple;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleBrowserHistory {
+public class BrowserHistory {
 
     private List<String> urls = new ArrayList<>();
 
