@@ -20,7 +20,7 @@ public class DialogBoxTest {
             window.close();
         });
 
-        assertThat(text).contains("Dialog Box Before Close");
+        assertThat(text).contains("Before closing Dialog Box");
     }
 
     @Test
@@ -29,7 +29,8 @@ public class DialogBoxTest {
             window.close();
         });
 
-        assertThat(text).contains("Dialog Box Close");
+        // Default logic of closeWindow()
+        assertThat(text).contains("Close Window");
     }
 
     @Test
@@ -38,7 +39,7 @@ public class DialogBoxTest {
             window.close();
         });
 
-        assertThat(text).contains("Dialog Box After Close");
+        assertThat(text).contains("After closing Dialog Box");
     }
 
 }
