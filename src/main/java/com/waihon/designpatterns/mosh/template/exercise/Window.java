@@ -12,7 +12,7 @@ public abstract class Window {
     protected abstract void beforeClose();
 
     protected void closeWindow() {
-        System.out.println("Window Close");
+        System.out.println("Close Window");
     }
 
     protected abstract void afterClose();
