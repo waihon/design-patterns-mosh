@@ -3,16 +3,16 @@ package com.waihon.designpatterns.mosh.template.exercise;
 public class AppWindow extends Window {
     @Override
     protected void beforeClose() {
-        System.out.println("App Window Before Close");
+        System.out.println("Before closing App Window");
     }
 
     @Override
     protected  void closeWindow() {
-        System.out.println("App Window Close");
+        System.out.println("Close App Window");
     }
 
     @Override
     protected void afterClose() {
-        System.out.println("App Window After Close");
+        System.out.println("After closing App Window");
     }
 }
