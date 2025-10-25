@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.iterator;
+package com.waihon.designpatterns.mosh.iterator.open;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,12 +10,12 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class IteratorTest {
-    OpenBrowserHistory history;
+    BrowserHistory history;
     Iterator<String> iterator;
 
     @BeforeEach
     void setUp() {
-        history = new OpenBrowserHistory();
+        history = new BrowserHistory();
         history.push("https://example.com");
         history.push("https://example.org");
         iterator = history.createIterator();

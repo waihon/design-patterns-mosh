@@ -1,9 +1,6 @@
-package com.waihon.designpatterns.mosh.iterator;
+package com.waihon.designpatterns.mosh.iterator.open;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class OpenBrowserHistory {
+public class BrowserHistory {
 
     private String[] urls = new String[10];
     private int count = 0;
@@ -33,10 +30,10 @@ public class OpenBrowserHistory {
 
     public class ArrayIterator implements Iterator<String> {
 
-        private OpenBrowserHistory history;
+        private BrowserHistory history;
         private int index;
 
-        public ArrayIterator(OpenBrowserHistory history) {
+        public ArrayIterator(BrowserHistory history) {
             this.history = history;
         }
 

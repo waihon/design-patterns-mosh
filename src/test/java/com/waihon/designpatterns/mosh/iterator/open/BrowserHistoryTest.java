@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.iterator;
+package com.waihon.designpatterns.mosh.iterator.open;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,13 +7,13 @@ import java.util.Arrays;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class OpenBrowserHistoryTest {
+public class BrowserHistoryTest {
 
-    OpenBrowserHistory history;
+    BrowserHistory history;
 
     @BeforeEach
     void setUp() {
-        history = new OpenBrowserHistory();
+        history = new BrowserHistory();
     }
 
     @Test
@@ -45,7 +45,7 @@ public class OpenBrowserHistoryTest {
 
     @Test
     void historyDoesNotExposetAListOfUrls() {
-        boolean methodExists = Arrays.stream(OpenBrowserHistory.class.getDeclaredMethods())
+        boolean methodExists = Arrays.stream(BrowserHistory.class.getDeclaredMethods())
                 .anyMatch(m -> m.getName().equals("getUrls") &&
                         m.getParameterCount() == 0);
         assertThat(methodExists).isEqualTo(false);
