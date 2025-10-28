@@ -1,6 +1,7 @@
 package com.waihon.designpatterns.mosh.command.editor;
 
 import com.waihon.designpatterns.mosh.command.fx.History;
+import com.waihon.designpatterns.mosh.command.fx.UndoCommand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
