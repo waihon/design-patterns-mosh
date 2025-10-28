@@ -1,5 +1,8 @@
 package com.waihon.designpatterns.mosh.command.editor;
 
+import com.waihon.designpatterns.mosh.command.fx.Command;
+import com.waihon.designpatterns.mosh.command.fx.History;
+
 public class UndoCommand implements Command {
     private History history;
 
