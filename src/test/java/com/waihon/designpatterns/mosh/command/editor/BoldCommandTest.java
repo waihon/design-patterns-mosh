@@ -28,9 +28,9 @@ public class BoldCommandTest {
     }
 
     @Test
-    void canUnexecute() {
+    void canUndo() {
         boldCommand.execute();
-        boldCommand.unexecute();
+        boldCommand.undo();
 
         assertThat(document.getContent()).isEqualTo(content);
     }

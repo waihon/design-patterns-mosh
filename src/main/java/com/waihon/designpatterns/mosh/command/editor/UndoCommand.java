@@ -13,7 +13,7 @@ public class UndoCommand implements Command {
     @Override
     public void execute() {
         if (history.size() > 0) {
-            history.pop().unexecute();
+            history.pop().undo();
         }
     }
 }

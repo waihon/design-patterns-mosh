@@ -20,8 +20,7 @@ public class BoldCommand implements UndoableCommand {
         history.push(this);
     }
 
-    @Override
-    public void unexecute() {
+    public void undo() {
         document.setContent(prevContent);
     }
 }
