@@ -1,5 +1,6 @@
 package com.waihon.designpatterns.mosh.command.exercise;
 
+import com.waihon.designpatterns.mosh.command.fx.History;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

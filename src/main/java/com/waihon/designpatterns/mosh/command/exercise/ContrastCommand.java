@@ -1,5 +1,8 @@
 package com.waihon.designpatterns.mosh.command.exercise;
 
+import com.waihon.designpatterns.mosh.command.fx.History;
+import com.waihon.designpatterns.mosh.command.fx.UndoableCommand;
+
 public class ContrastCommand implements UndoableCommand {
     private float prevContrast;
     private float newContrast;

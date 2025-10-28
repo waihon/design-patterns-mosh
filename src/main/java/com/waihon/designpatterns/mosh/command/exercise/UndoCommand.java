@@ -1,7 +1,7 @@
 package com.waihon.designpatterns.mosh.command.exercise;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import com.waihon.designpatterns.mosh.command.fx.Command;
+import com.waihon.designpatterns.mosh.command.fx.History;
 
 public class UndoCommand implements Command {
     private History history;
