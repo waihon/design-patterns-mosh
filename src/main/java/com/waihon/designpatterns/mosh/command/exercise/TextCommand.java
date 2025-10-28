@@ -22,8 +22,7 @@ public class TextCommand implements UndoableCommand {
         history.push(this);
     }
 
-    @Override
-    public void unexecute() {
+    public void undo() {
         videoEditor.setText(prevText);
     }
 }

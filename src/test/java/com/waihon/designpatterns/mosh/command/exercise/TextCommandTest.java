@@ -27,9 +27,9 @@ public class TextCommandTest {
     }
 
     @Test
-    void canUnexecute() {
+    void canUndo() {
         textCommand.execute();
-        textCommand.unexecute();
+        textCommand.undo();
 
         assertThat(videoEditor.getText()).isNull();
     }

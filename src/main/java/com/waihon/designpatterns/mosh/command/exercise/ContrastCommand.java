@@ -21,7 +21,7 @@ public class ContrastCommand implements UndoableCommand {
         history.push(this);
     }
 
-    public void unexecute() {
+    public void undo() {
         videoEditor.setContrast(prevContrast);
     }
 }

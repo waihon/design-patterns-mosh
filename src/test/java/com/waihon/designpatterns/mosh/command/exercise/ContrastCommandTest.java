@@ -30,7 +30,7 @@ public class ContrastCommandTest {
         contrastCommand.execute();
         assertThat(videoEditor.getContrast()).isEqualTo(2.5f);
 
-        contrastCommand.unexecute();
+        contrastCommand.undo();
         assertThat(videoEditor.getContrast()).isEqualTo(0.5f);
     }
 }
