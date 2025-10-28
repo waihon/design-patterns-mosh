@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.command.editor;
+package com.waihon.designpatterns.mosh.command.fx;
 
 import com.waihon.designpatterns.mosh.command.fx.Command;
 import com.waihon.designpatterns.mosh.command.fx.History;
