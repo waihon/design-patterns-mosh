@@ -26,7 +26,7 @@ public class ContrastCommandTest {
     }
 
     @Test
-    void canUnexecute() {
+    void canUndo() {
         contrastCommand.execute();
         assertThat(videoEditor.getContrast()).isEqualTo(2.5f);
 
