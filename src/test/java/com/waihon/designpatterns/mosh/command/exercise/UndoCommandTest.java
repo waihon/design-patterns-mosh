@@ -24,7 +24,7 @@ public class UndoCommandTest {
     void setUp() {
         videoEditor = new VideoEditor();
         newText = "Hello World";
-        newText2 = "Apa Khabar Dunie";
+        newText2 = "Apa Khabar Dunia";
         newContrast = 3.0f;
         newContrast2 = 4.0f;
         var history = new History();
