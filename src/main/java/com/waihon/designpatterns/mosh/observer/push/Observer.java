@@ -1,5 +1,5 @@
 package com.waihon.designpatterns.mosh.observer.push;
 
-public interface Observer {
-    void update(int value);
+public interface Observer<T> {
+    void update(T value);
 }
