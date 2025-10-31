@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.observer.push;
 
-public class Spreadsheet implements Observer {
+public class Spreadsheet implements Observer<Integer> {
     private String name;
 
     public Spreadsheet(String name) {
@@ -8,7 +8,7 @@ public class Spreadsheet implements Observer {
     }
 
     @Override
-    public void update(int value) {
+    public void update(Integer value) {
         System.out.println("Spreadsheet '" + name + "' got updated: " + value + ".");
     }
 }

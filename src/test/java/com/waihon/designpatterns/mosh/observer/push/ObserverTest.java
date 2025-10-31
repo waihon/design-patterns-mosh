@@ -11,7 +11,7 @@ public class ObserverTest {
     private Spreadsheet spreadsheet1;
     private Spreadsheet spreadsheet2;
     private Chart chart1;
-    private int value;
+    private Integer value;
 
     @BeforeEach
     void setUp() {

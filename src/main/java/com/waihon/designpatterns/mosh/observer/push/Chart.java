@@ -1,6 +1,6 @@
 package com.waihon.designpatterns.mosh.observer.push;
 
-public class Chart implements Observer {
+public class Chart implements Observer<Integer> {
     private String name;
 
     public Chart(String name) {
@@ -8,7 +8,7 @@ public class Chart implements Observer {
     }
 
     @Override
-    public void update(int value) {
+    public void update(Integer value) {
         System.out.println("Chart '" + name + "' got updated: " + value + ".");
     }
 }
