@@ -8,6 +8,8 @@ public class StockListView implements Observer {
 
     public void addStock(Stock stock) {
         stocks.add(stock);
+
+        stock.addObserver(this);
     }
 
     public void show() {
@@ -17,6 +19,8 @@ public class StockListView implements Observer {
 
     @Override
     public void update() {
-       show();
+        System.out.println("Priced Changed - Refreshing StockListView");
+
+        show();
     }
 }

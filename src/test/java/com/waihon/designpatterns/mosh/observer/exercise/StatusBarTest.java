@@ -17,8 +17,6 @@ public class StatusBarTest {
         stock2 = new Stock("AAPL", 252.29f);
         statusBar = new StatusBar();
 
-        stock1.addObserver(statusBar);
-        stock2.addObserver(statusBar);
         statusBar.addStock(stock1);
         statusBar.addStock(stock2);
     }
@@ -29,6 +27,7 @@ public class StatusBarTest {
             statusBar.show();
         });
 
+        assertThat(text).doesNotContain("Priced Changed - Refreshing StatusBar");
         assertThat(text).contains("Stock{symbol='NVDA', price=183.22}");
         assertThat(text).contains("Stock{symbol='AAPL', price=252.29}");
         assertThat(text).doesNotContain("Stock{symbol='GOOG', price=253.79}");
@@ -43,6 +42,7 @@ public class StatusBarTest {
             stock2.setPrice(250.00f);
         });
 
+        assertThat(text).contains("Priced Changed - Refreshing StatusBar");
         assertThat(text).contains("Stock{symbol='NVDA', price=180.0}");
         assertThat(text).contains("Stock{symbol='AAPL', price=250.0}");
     }

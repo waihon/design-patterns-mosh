@@ -24,12 +24,6 @@ public class StockListViewTest {
 
         stockListView = new StockListView();
 
-        stock1.addObserver(stockListView);
-        stock2.addObserver(stockListView);
-        stock3.addObserver(stockListView);
-        stock4.addObserver(stockListView);
-        stock5.addObserver(stockListView);
-
         stockListView.addStock(stock1);
         stockListView.addStock(stock2);
         stockListView.addStock(stock3);
@@ -43,6 +37,7 @@ public class StockListViewTest {
             stockListView.show();
         });
 
+        assertThat(text).doesNotContain("Priced Changed - Refreshing StockListView");
         assertThat(text).contains("Stock{symbol='NVDA', price=183.22}");
         assertThat(text).contains("Stock{symbol='AAPL', price=252.29}");
         assertThat(text).contains("Stock{symbol='GOOG', price=253.79}");
@@ -57,6 +52,7 @@ public class StockListViewTest {
             stock4.setPrice(210.0f);
         });
 
+        assertThat(text).contains("Priced Changed - Refreshing StockListView");
         assertThat(text).contains("Stock{symbol='NVDA', price=183.22}");
         assertThat(text).contains("Stock{symbol='AAPL', price=250.0}");
         assertThat(text).contains("Stock{symbol='GOOG', price=253.79}");
