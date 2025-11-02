@@ -22,7 +22,7 @@ public class VisitorTest {
     }
 
     @Test
-    void testReduceNoticeOperation() throws Exception {
+    void testReduceNoiseOperation() throws Exception {
         var text = tapSystemOut(() -> {
             wavFile.execute(new ReduceNoiseOperation());
         });
