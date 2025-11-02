@@ -16,4 +16,11 @@ public class Group implements Component {
             component.render();
         }
     }
+
+    @Override
+    public void move() {
+        for (var component : components) {
+            component.move();
+        }
+    }
 }
