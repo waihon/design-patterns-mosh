@@ -69,6 +69,39 @@ class CompositeTest {
         assertThat(count).isEqualTo(4);
     }
 
+    @Test
+    void moveAShape() throws Exception {
+        var text = tapSystemOut(() -> {
+            shape1.move();
+        });
+
+        assertThat(text).contains(MOVE_MESSAGE);
+        var count = countOfSubstring(text, MOVE_MESSAGE);
+        assertThat(count).isEqualTo(1);
+    }
+
+    @Test
+    void moveAGroupOfTwoShapes() throws Exception {
+        var text = tapSystemOut(() -> {
+            group1.move();
+        });
+
+        assertThat(text).contains(MOVE_MESSAGE);
+        var count = countOfSubstring(text, MOVE_MESSAGE);
+        assertThat(count).isEqualTo(2);
+    }
+
+    @Test
+    void moveTwoGroupsOfTwoShapesEach () throws Exception {
+        var text = tapSystemOut(() -> {
+            group.move();
+        });
+
+        assertThat(text).contains(MOVE_MESSAGE);
+        var count = countOfSubstring(text, MOVE_MESSAGE);
+        assertThat(count).isEqualTo(4);
+    }
+
     private int countOfSubstring(String string, String substring) {
         return string.split(Pattern.quote(substring), -1).length - 1;
     }
