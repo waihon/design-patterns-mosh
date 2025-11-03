@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.composite;
+package com.waihon.designpatterns.mosh.composite.demo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

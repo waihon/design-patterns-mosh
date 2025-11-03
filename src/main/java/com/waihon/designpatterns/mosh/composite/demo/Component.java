@@ -1,4 +1,4 @@
-package com.waihon.designpatterns.mosh.composite;
+package com.waihon.designpatterns.mosh.composite.demo;
 
 public interface Component {
     void render();
