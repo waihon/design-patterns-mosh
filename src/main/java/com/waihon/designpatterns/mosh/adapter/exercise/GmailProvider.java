@@ -3,11 +3,7 @@ package com.waihon.designpatterns.mosh.adapter.exercise;
 import com.waihon.designpatterns.mosh.adapter.exercise.gmail.GmailClient;
 
 public class GmailProvider implements EmailProvider {
-    private GmailClient gmailClient;
-
-    public GmailProvider(GmailClient gmailClient) {
-        this.gmailClient = gmailClient;
-    }
+    private GmailClient gmailClient = new GmailClient();
 
     @Override
     public void downloadEmails() {

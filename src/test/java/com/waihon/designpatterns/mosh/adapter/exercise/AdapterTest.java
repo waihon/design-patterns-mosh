@@ -13,7 +13,6 @@ public class AdapterTest {
     private static final String GMAIL_DOWNLOAD = "Downloading emails from Gmail";
     private static final String GMAIL_DISCONNECT = "Disconnecting from Gmail";
 
-    private GmailClient gmailClient;
     private EmailClient emailClient;
     private YahooProvider yahooProvider;
     private GmailProvider gmailProvider;
@@ -21,8 +20,7 @@ public class AdapterTest {
     @BeforeEach
     void setUp() {
         yahooProvider = new YahooProvider();
-        gmailClient = new GmailClient();
-        gmailProvider = new GmailProvider(gmailClient);
+        gmailProvider = new GmailProvider();
         
         emailClient = new EmailClient();
         emailClient.addProvider(yahooProvider);
