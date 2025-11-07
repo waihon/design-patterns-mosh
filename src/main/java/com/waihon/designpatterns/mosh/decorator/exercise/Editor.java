@@ -6,7 +6,7 @@ public class Editor {
                 new MainArtefact(new BasicArtefact("Main")),
                 new BasicArtefact("Demo"),
                 new ErrorArtefact (new BasicArtefact("EmailClient")),
-                new BasicArtefact("EmailProvider")
+                new MainArtefact(new ErrorArtefact(new BasicArtefact("EmailProvider")))
         };
 
         for (var artefact : artefacts) {

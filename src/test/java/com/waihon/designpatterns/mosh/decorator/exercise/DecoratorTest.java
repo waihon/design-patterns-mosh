@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class DecoratorTest {
     private Editor editor;
@@ -20,9 +20,12 @@ class DecoratorTest {
             editor.openProject("/projects/xyz");
         });
 
-        assertThat(text).contains("Main [Main]");
-        assertThat(text).contains("Demo");
-        assertThat(text).contains("EmailClient [Error]");
-        assertThat(text).contains("EmailProvider");
+        assertThat(text.lines())
+                .containsExactly(
+                        "Main [Main]",
+                        "Demo",
+                        "EmailClient [Error]",
+                        "EmailProvider [Error] [Main]"
+                );
     }
 }
