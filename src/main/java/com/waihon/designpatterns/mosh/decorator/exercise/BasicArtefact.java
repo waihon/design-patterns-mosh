@@ -1,26 +1,14 @@
 package com.waihon.designpatterns.mosh.decorator.exercise;
 
-public class Artefact {
+public class BasicArtefact implements Artefact {
     private String name;
-    private boolean hasError;
-    private boolean main;
 
-    public Artefact(String name) {
+    public BasicArtefact(String name) {
         this.name = name;
     }
 
+    @Override
     public String render() {
-        String errorIcon = hasError ? " [Error]" : "";
-        String mainIcon = main ? " [Main]" : "";
-
-        return String.format("%s%s%s", name, errorIcon, mainIcon);
-    }
-
-    public void setHasError(boolean hasError) {
-        this.hasError = hasError;
-    }
-
-    public void setMain(boolean main) {
-        this.main = main;
+        return name;
     }
 }
