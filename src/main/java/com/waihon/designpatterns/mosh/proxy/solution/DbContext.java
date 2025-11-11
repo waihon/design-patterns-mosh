@@ -1,18 +1,18 @@
-package com.waihon.designpatterns.mosh.proxy.exercise;
+package com.waihon.designpatterns.mosh.proxy.solution;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class DbContext {
-    private Map<Integer, RealProduct> updatedProducts = new HashMap<>();
+    private Map<Integer, Product> updatedProducts = new HashMap<>();
 
-    public RealProduct getProduct(int id) {
+    public Product getProduct(int id) {
         // Automatically generate SQL statements to read the product
         // with the given ID.
         System.out.printf("SELECT * FROM products WHERE product_id = %d\n", id);
 
         // Simulate reading a product object from a database.
-        var product = new RealProduct(id);
+        var product = new ProductProxy(id, this);
         product.setName("Product 1");
 
         return product;
@@ -28,7 +28,7 @@ public class DbContext {
         updatedProducts.clear();
     }
 
-    public void markAsChanged(RealProduct product) {
+    public void markAsChanged(Product product) {
         updatedProducts.put(product.getId(), product);
     }
 }
