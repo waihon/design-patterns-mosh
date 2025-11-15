@@ -4,19 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Logger {
-    private static Map<String, Logger> loggers = new HashMap<>();
+    private static Map<String, Logger> instances = new HashMap<>();
+    private String fileName;
     private String content = "";
 
-    private Logger() { }
+    private Logger(String fileName) {
+        this.fileName = fileName;
+    }
 
     public static Logger getInstance(String fileName) {
-        if (loggers.containsKey(fileName)) {
-            return loggers.get(fileName);
-        } else {
-            var logger = new Logger();
-            loggers.put(fileName, logger);
-            return logger;
+        if (!instances.containsKey(fileName)) {
+            instances.put(fileName, new Logger(fileName));
         }
+
+        return instances.get(fileName);
     }
 
     public void write(String log) {
