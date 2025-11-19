@@ -25,12 +25,14 @@ class BuilderTest {
 
     @Test
     void exportPresentationToPdf() throws Exception {
+        var builder = new PdfDocumentBuilder();
         var text = tapSystemOut(() -> {
-            presentation.export(PresentationFormat.PDF);
+            presentation.export(builder);
         });
 
         assertThat(text.lines())
                 .containsExactly(
+                        "Adding a page to PDF: Copyright",
                         "Adding a page to PDF: Slide 1",
                         "Adding a page to PDF: Slide 2",
                         "Adding a page to PDF: Slide 3"
@@ -39,12 +41,14 @@ class BuilderTest {
 
     @Test
     void exportPresentationToMovie() throws Exception {
+        var builder = new MovieBuilder();
         var text = tapSystemOut(() -> {
-            presentation.export(PresentationFormat.MOVIE);
+            presentation.export(builder);
         });
 
         assertThat(text.lines())
                 .containsExactly(
+                        "Adding a frame to the movie: Copyright [3]",
                         "Adding a frame to the movie: Slide 1 [3]",
                         "Adding a frame to the movie: Slide 2 [3]",
                         "Adding a frame to the movie: Slide 3 [3]"
