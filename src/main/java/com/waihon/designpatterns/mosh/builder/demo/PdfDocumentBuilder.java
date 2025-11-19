@@ -8,7 +8,7 @@ public class PdfDocumentBuilder implements PresentationBuilder{
         document.addPage(slide.getText());
     }
 
-    public PdfDocument getDocument() {
+    public PdfDocument getPdfDocument() {
         return document;
     }
 }

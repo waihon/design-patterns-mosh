@@ -29,7 +29,7 @@ class BuilderTest {
         var text = tapSystemOut(() -> {
             presentation.export(builder);
         });
-        var pdfDocument = builder.getDocument();
+        var pdfDocument = builder.getPdfDocument();
 
         assertThat(text.lines())
                 .containsExactly(
@@ -39,7 +39,7 @@ class BuilderTest {
                         "Adding a page to PDF: Slide 3"
                 );
 
-        assertThat(pdfDocument.getPages()).isEqualTo(4);
+        assertThat(pdfDocument.getPageCount()).isEqualTo(4);
     }
 
     @Test
@@ -58,6 +58,6 @@ class BuilderTest {
                         "Adding a frame to the movie: Slide 3 [3]"
                 );
 
-        assertThat(movie.getFrames()).isEqualTo(4);
+        assertThat(movie.getFrameCount()).isEqualTo(4);
     }
 }
