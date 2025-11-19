@@ -10,17 +10,10 @@ public class Presentation {
         slides.add(slide);
     }
 
-    public void export(PresentationFormat format) {
-        if (format == PresentationFormat.PDF) {
-            var pdf = new PdfDocument();
-            for (var slide : slides) {
-                pdf.addPage((slide.getText()));
-            }
-        } else if (format == PresentationFormat.MOVIE) {
-            var movie = new Movie();
-            for (var slide : slides) {
-                movie.addFrame(slide.getText(), 3);
-            }
+    public void export(PresentationBuilder builder) {
+        builder.addSlide(new Slide("Copyright"));
+        for (var slide : slides) {
+            builder.addSlide(slide);
         }
     }
 }
