@@ -29,6 +29,7 @@ class BuilderTest {
         var text = tapSystemOut(() -> {
             presentation.export(builder);
         });
+        var pdfDocument = builder.getDocument();
 
         assertThat(text.lines())
                 .containsExactly(
@@ -37,6 +38,8 @@ class BuilderTest {
                         "Adding a page to PDF: Slide 2",
                         "Adding a page to PDF: Slide 3"
                 );
+
+        assertThat(pdfDocument.getPages()).isEqualTo(4);
     }
 
     @Test
@@ -45,6 +48,7 @@ class BuilderTest {
         var text = tapSystemOut(() -> {
             presentation.export(builder);
         });
+        var movie = builder.getMovie();
 
         assertThat(text.lines())
                 .containsExactly(
@@ -53,5 +57,7 @@ class BuilderTest {
                         "Adding a frame to the movie: Slide 2 [3]",
                         "Adding a frame to the movie: Slide 3 [3]"
                 );
+
+        assertThat(movie.getFrames()).isEqualTo(4);
     }
 }
