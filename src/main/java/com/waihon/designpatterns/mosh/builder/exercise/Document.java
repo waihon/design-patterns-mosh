@@ -21,16 +21,15 @@ public class Document {
         String content = "";
 
         for (Element element: elements) {
-            builder.addElement(element);
+            if (element instanceof Text) {
+                builder.addText((Text)element);
+            } else if (element instanceof Image) {
+                builder.addImage((Image)element);
+            }
         }
-
-        content = builder.toString();
-
 
         var writer = new FileWriter(fileName);
         writer.write(content);
         writer.close();
-
-        System.out.printf("%s\n", content);
     }
 }
