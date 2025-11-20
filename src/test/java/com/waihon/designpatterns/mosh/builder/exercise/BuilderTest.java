@@ -18,19 +18,17 @@ class BuilderTest {
 
     @Test
     void exportToHtmlFormat() throws Exception {
-        var text = tapSystemOut(() -> {
-            document.export(new HtmlDocumentBuilder(), "export.html");
-        });
+        var builder = new HtmlDocumentBuilder();
+        document.export(builder, "export.html");
 
-        assertThat(text.lines()).containsExactly("<html><p>Hello, World!</p><img src=\"pic1.jpg\" /></html>");
+        assertThat(builder.getResult().lines()).containsExactly("<html><p>Hello, World!</p><img src=\"pic1.jpg\" /></html>");
     }
 
     @Test
     void exportToTextFormat() throws Exception {
-        var text = tapSystemOut(() -> {
-            document.export(new TextDocumentBuilder(), "export.txt");
-        });
+        var builder = new TextDocumentBuilder();
+        document.export(builder, "export.txt");
 
-        assertThat(text.lines()).containsExactly("Hello, World!");
+        assertThat(builder.getResult().lines()).containsExactly("Hello, World!");
     }
 }
