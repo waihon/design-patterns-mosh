@@ -6,19 +6,17 @@ public class TextDocumentBuilder implements DocumentBuilder {
     private TextDocument document = new TextDocument();
 
     @Override
-    public void addElement(Element element) {
-        if (element instanceof Text) {
-            var text = ((Text)element).getContent();
-            document.append(text);
-        }
-    }
-
-    public TextDocument getTextDocument() {
-        return document;
+    public void addText(Text text) {
+        document.append(text.getContent());
     }
 
     @Override
-    public String toString() {
+    public void addImage(Image image) {
+        // Images are not applicable to Text document.
+    }
+
+    @Override
+    public String getResult() {
         return document.toString();
     }
 }

@@ -8,23 +8,17 @@ public class HtmlDocumentBuilder implements DocumentBuilder {
     private HtmlDocument document = new HtmlDocument();
 
     @Override
-    public void addElement(Element element) {
-        if (element instanceof Text) {
-            var text = ((Text)element).getContent();
-            document.add(new HtmlParagraph(text));
-        }
-        else if (element instanceof Image) {
-            var source = ((Image)element).getSource();
-            document.add(new HtmlImage(source));
-        }
-    }
-
-    public HtmlDocument getHtmlDocument() {
-        return document;
+    public void addText(Text text) {
+        document.add(new HtmlParagraph(text.getContent()));
     }
 
     @Override
-    public String toString() {
+    public void addImage(Image image) {
+        document.add(new HtmlImage(image.getSource()));
+    }
+
+    @Override
+    public String getResult() {
         return document.toString();
     }
 }
