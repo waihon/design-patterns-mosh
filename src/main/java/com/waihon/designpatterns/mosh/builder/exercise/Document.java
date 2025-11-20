@@ -17,37 +17,15 @@ public class Document {
         elements.add(element);
     }
 
-    public void export(ExportFormat format, String fileName) throws IOException {
+    public void export(DocumentBuilder builder, String fileName) throws IOException {
         String content = "";
 
-        if (format == ExportFormat.HTML) {
-            var document = new HtmlDocument();
-
-            for (Element element: elements) {
-                if (element instanceof Text) {
-                    var text = ((Text)element).getContent();
-                    document.add(new HtmlParagraph(text));
-                }
-                else if (element instanceof Image) {
-                    var source = ((Image)element).getSource();
-                    document.add(new HtmlImage(source));
-                }
-            }
-
-            content = document.toString();
+        for (Element element: elements) {
+            builder.addElement(element);
         }
-        else if (format == ExportFormat.TEXT) {
-            var builder = new StringBuilder();
 
-            for (Element element: elements) {
-                if (element instanceof Text) {
-                    var text = ((Text)element).getContent();
-                    builder.append(text);
-                }
-            }
+        content = builder.toString();
 
-            content = builder.toString();
-        }
 
         var writer = new FileWriter(fileName);
         writer.write(content);
