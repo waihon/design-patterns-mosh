@@ -19,7 +19,7 @@ class BuilderTest {
     @Test
     void exportToHtmlFormat() throws Exception {
         var text = tapSystemOut(() -> {
-            document.export(ExportFormat.HTML, "export.html");
+            document.export(new HtmlDocumentBuilder(), "export.html");
         });
 
         assertThat(text.lines()).containsExactly("<html><p>Hello, World!</p><img src=\"pic1.jpg\" /></html>");
@@ -28,7 +28,7 @@ class BuilderTest {
     @Test
     void exportToTextFormat() throws Exception {
         var text = tapSystemOut(() -> {
-            document.export(ExportFormat.TEXT, "export.txt");
+            document.export(new TextDocumentBuilder(), "export.txt");
         });
 
         assertThat(text.lines()).containsExactly("Hello, World!");
